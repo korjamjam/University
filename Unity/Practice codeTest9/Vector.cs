@@ -21,7 +21,7 @@ public class Test9Vector : MonoBehaviour
         Vector2 dir = endPos - startPos;
         Debug.Log(dir);
 
-        float len = dir.magnitude; //magnitude VectorÀÇ Å©±â¸¦ ³ªÅ¸³¿(ÇÇÅ¸°í¶ó½ºÀÇ Á¤¸®)
+        float len = dir.magnitude; //magnitude Vectorì˜ í¬ê¸°ë¥¼ ë‚˜íƒ€ëƒ„(í”¼íƒ€ê³ ë¼ìŠ¤ì˜ ì •ë¦¬)
         Debug.Log(len);
     }
 
