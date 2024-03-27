@@ -8,7 +8,7 @@ public class Test6arr : MonoBehaviour
     void Start()
     {
         int[] points = { 83, 99, 52, 93, 15 };
-        for (int i = 0; i < points.Length; i++) //Length´Â ¹è¿­ Å©±â¸¦ ÀÚµ¿À¸·Î Á¶Á¤
+        for (int i = 0; i < points.Length; i++) //LengthëŠ” ë°°ì—´ í¬ê¸°ë¥¼ ìžë™ìœ¼ë¡œ ì¡°ì •
         {
             if (points[i] >= 90)
             {
