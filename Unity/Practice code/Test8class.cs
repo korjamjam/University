@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Player
 {
-    private int hp = 100;    //privateÀº Å¬·¡½ºÀÇ ¸â¹öº¯¼öÀÌ±â¿¡ ¾Æ·¡ÀÇ ¸ŞÀÎÅ¬·¡½º¿¡¼­ ¸ø°¡Á®¿È.
+    private int hp = 100;    //privateì€ í´ë˜ìŠ¤ì˜ ë©¤ë²„ë³€ìˆ˜ì´ê¸°ì— ì•„ë˜ì˜ ë©”ì¸í´ë˜ìŠ¤ì—ì„œ ëª»ê°€ì ¸ì˜´.
     private int power = 50;
 
     public void Attack()
     {
-        //int power = 9999; ¸¸¾à ÀÌ ÁÙÀÌ ÀÖ´Ù¸é this¸¦ ²À ºÙ¿©¾ß ÇÔ,
-        Debug.Log(this.power + " ´ë¹ÌÁö¸¦ ÀÔÇû´Ù");
+        //int power = 9999; ë§Œì•½ ì´ ì¤„ì´ ìˆë‹¤ë©´ thisë¥¼ ê¼­ ë¶™ì—¬ì•¼ í•¨,
+        Debug.Log(this.power + " ëŒ€ë¯¸ì§€ë¥¼ ì…í˜”ë‹¤");
     }
     public void Damage(int damage)
     {
         this.hp -= damage;
-        Debug.Log(damage + " ´ë¹ÌÁö¸¦ ÀÔ¾ú´Ù");
+        Debug.Log(damage + " ëŒ€ë¯¸ì§€ë¥¼ ì…ì—ˆë‹¤");
     }
     public int GetHP()
     { 
@@ -23,13 +23,13 @@ public class Player
     }
 }
 
-public class Test8class : MonoBehaviour// : MonoBehaviour = »ó¼Ó
+public class Test8class : MonoBehaviour// : MonoBehaviour = ìƒì†
 {
     void Start()
     {
         Player myPlayer = new Player();
         myPlayer.Attack();
         myPlayer.Damage(30);
-        Debug.Log("ÇöÀç HP = " + myPlayer.GetHP());
+        Debug.Log("í˜„ì¬ HP = " + myPlayer.GetHP());
     }
 }
