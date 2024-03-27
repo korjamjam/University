@@ -9,7 +9,7 @@ public class Test3 : MonoBehaviour
     {
         string str1 = "Happy ";
         string str2 = "Birthday";
-        str1 += str2; //¿À¸¥ÂÊ °ªÀ» ´õÇÔ.
+        str1 += str2; //Â¿Ã€Â¸Â¥Ã‚ÃŠ Â°ÂªÃ€Â» Â´ÃµÃ‡Ã”.
         Debug.Log(str1);
         Debug.Log(str2);
 
