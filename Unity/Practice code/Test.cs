@@ -5,13 +5,13 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()//ÇÑ¹ø¸¸
+    void Start()//í•œë²ˆë§Œ
     {
         Debug.Log("Hello, World");
     }
 
     // Update is called once per frame
-    void Update() //¸ØÃßÁö ¾Ê´ÂÇÑ ¹«ÇÑ´ë·Î
+    void Update() //ë©ˆì¶”ì§€ ì•ŠëŠ”í•œ ë¬´í•œëŒ€ë¡œ
     {
         //Debug.Log("Hello, World");
     }
