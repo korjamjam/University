@@ -10,21 +10,21 @@ public class Test4if : MonoBehaviour
         int hp = 100;
         if(hp <= 50)
         {
-            Debug.Log("µµ¸Á!");
+            Debug.Log("ë„ë§!");
         }
         else
         {
-            Debug.Log("ÀüÅõ!");
+            Debug.Log("ì „íˆ¬!");
         }
 
-        int x = 1; //Àü¿ªº¯¼ö
+        int x = 1; //ì „ì—­ë³€ìˆ˜
         if(x == 1)
         {
-            int y = 2; //Áö¿ªº¯¼ö
+            int y = 2; //ì§€ì—­ë³€ìˆ˜
             Debug.Log(x);
             Debug.Log(y);
         }
-        //Debug.Log(y); ºí·°¾È¿¡ ¾ø±â ¶§¹®¿¡ ¿À·ù°¡ ¹ß»ý
+        //Debug.Log(y); ë¸”ëŸ­ì•ˆì— ì—†ê¸° ë•Œë¬¸ì— ì˜¤ë¥˜ê°€ ë°œìƒ
     }
 
     // Update is called once per frame
