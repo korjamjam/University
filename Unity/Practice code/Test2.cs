@@ -11,7 +11,7 @@ public class Test2 : MonoBehaviour
         age = 30;
         Debug.Log(age);
 
-        float height1 = 160.5f; //f¸¦ ¾²Áö ¾ÊÀ¸¸é doubleÇüÀ¸·Î ÀÎ½Ä µÊ
+        float height1 = 160.5f; //fë¥¼ ì“°ì§€ ì•Šìœ¼ë©´ doubleí˜•ìœ¼ë¡œ ì¸ì‹ ë¨
         float height2;
         height2 = height1;
         Debug.Log(height2);
@@ -22,7 +22,7 @@ public class Test2 : MonoBehaviour
         Debug.Log(height4);
 
         string name;
-        name = "ÀüÁ¦¹Î";
+        name = "ì „ì œë¯¼";
         Debug.Log(name);
     }
 
