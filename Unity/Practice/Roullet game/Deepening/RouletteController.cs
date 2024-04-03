@@ -4,47 +4,48 @@ using UnityEngine;
 
 public class RouletteController : MonoBehaviour
 {
-    float rotSpeed = 0; // ÇöÀç È¸Àü ¼Óµµ
-    float acceleration = 0.5f; // °¡¼Óµµ
-    float maxSpeed = 30.0f; // ÃÖ°í ¼Óµµ
-    bool isAccelerating = false; // °¡¼Ó ÁßÀÎÁö ¿©ºÎ
+    float rotSpeed = 0; // í˜„ì¬ íšŒì „ ì†ë„
+    float acceleration = 0.5f; // ê°€ì†ë„
+    float maxSpeed = 30.0f; // ìµœê³  ì†ë„
+    bool isAccelerating = false; // ê°€ì† ì¤‘ì¸ì§€ ì—¬ë¶€
 
     void Start()
     {
-        // ÇÁ·¹ÀÓ·¹ÀÌÆ®¸¦ 60À¸·Î °íÁ¤
+        // í”„ë ˆì„ë ˆì´íŠ¸ë¥¼ 60ìœ¼ë¡œ ê³ ì •
         Application.targetFrameRate = 60;
     }
 
+    //ëˆ„ë¥¼ ë•Œ ë§ˆë‹¤ ë°©í–¥ì´ ë°”ë€Œê³  ì†ë„ë„ ë¦¬ì…‹ë¨
     void Update()
     {
-        // ÁÂÅ¬¸¯ ½Ã °¡¼Ó ½ÃÀÛ
+        // ì¢Œí´ë¦­ ì‹œ ê°€ì† ì‹œì‘
         if (Input.GetMouseButtonDown(0))
         {
             isAccelerating = true;
         }
 
-        // °¡¼Ó ÁßÀÌ°í ÃÖ°í ¼Óµµ¿¡ µµ´ŞÇÏÁö ¾Ê¾Ò´Ù¸é
+        // ê°€ì† ì¤‘ì´ê³  ìµœê³  ì†ë„ì— ë„ë‹¬í•˜ì§€ ì•Šì•˜ë‹¤ë©´
         if (isAccelerating && Mathf.Abs(rotSpeed) < maxSpeed)
         {
-            // °¡¼Ó
+            // ê°€ì†
             rotSpeed -= acceleration;
         }
         else if (Mathf.Abs(rotSpeed) >= maxSpeed)
         {
-            // ÃÖ°í ¼Óµµ¿¡ µµ´ŞÇÏ¸é °¡¼Ó ÁßÁö
+            // ìµœê³  ì†ë„ì— ë„ë‹¬í•˜ë©´ ê°€ì† ì¤‘ì§€
             isAccelerating = false;
         }
 
-        // È¸Àü ¼Óµµ¸¸Å­ ·ê·¿À» È¸Àü½ÃÅ²´Ù
+        // íšŒì „ ì†ë„ë§Œí¼ ë£°ë ›ì„ íšŒì „ì‹œí‚¨ë‹¤
         transform.Rotate(0, 0, this.rotSpeed);
 
-        // °¡¼Ó ÁßÀÌ ¾Æ´Ï¶ó¸é °¨¼Ó
+        // ê°€ì† ì¤‘ì´ ì•„ë‹ˆë¼ë©´ ê°ì†
         if (!isAccelerating)
         {
             this.rotSpeed *= 0.97f;
         }
 
-        // ESC Å°¸¦ ´­·¯ °ÔÀÓ Á¾·á
+        // ESC í‚¤ë¥¼ ëˆŒëŸ¬ ê²Œì„ ì¢…ë£Œ
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
