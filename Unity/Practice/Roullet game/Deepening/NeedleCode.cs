@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class NeedleCode : MonoBehaviour
 {
-    float rotSpeed = 0;  // È¸Àü ¼Óµµ
-    bool isStopping = false; // ·ê·¿ÀÌ ¸ØÃß°í ÀÖ´ÂÁö ¿©ºÎ¸¦ È®ÀÎÇÏ´Â ÇÃ·¡±×
+    float rotSpeed = 0;  // íšŒì „ ì†ë„
+    bool isStopping = false; // ë£°ë ›ì´ ë©ˆì¶”ê³  ìžˆëŠ”ì§€ ì—¬ë¶€ë¥¼ í™•ì¸í•˜ëŠ” í”Œëž˜ê·¸
 
     void Start()
     {
-        // ÇÁ·¹ÀÓ·¹ÀÌÆ®¸¦ 60À¸·Î °íÁ¤
+        // í”„ë ˆìž„ë ˆì´íŠ¸ë¥¼ 60ìœ¼ë¡œ ê³ ì •
         Application.targetFrameRate = 60;
     }
 
     void Update()
     {
-        // Å¬¸¯ÇÏ¸é È¸Àü ¼Óµµ¸¦ ¼³Á¤ÇÑ´Ù.
+        // í´ë¦­í•˜ë©´ íšŒì „ ì†ë„ë¥¼ ì„¤ì •í•œë‹¤.
         if (Input.GetMouseButtonDown(0))
         {
             this.rotSpeed = 30;
-            this.isStopping = false; // È¸ÀüÀÌ ½ÃÀÛµÇ¾úÀ¸´Ï, ¸ØÃß´Â ÁßÀÌ ¾Æ´Ô
+            this.isStopping = false; // íšŒì „ì´ ì‹œìž‘ë˜ì—ˆìœ¼ë‹ˆ, ë©ˆì¶”ëŠ” ì¤‘ì´ ì•„ë‹˜
         }
 
-        if (this.rotSpeed > 0.2 || this.rotSpeed < -0.2) // È¸Àü Áß
+        if (this.rotSpeed > 0.2 || this.rotSpeed < -0.2) // íšŒì „ ì¤‘
         {
             transform.Rotate(0, 0, this.rotSpeed);
-            this.rotSpeed *= 0.97f; // ·ê·¿À» °¨¼Ó½ÃÅ²´Ù
+            this.rotSpeed *= 0.97f; // ë£°ë ›ì„ ê°ì†ì‹œí‚¨ë‹¤
         }
-        else if (!this.isStopping) // È¸ÀüÀÌ °ÅÀÇ ¸ØÃá »óÅÂ
+        else if (!this.isStopping) // íšŒì „ì´ ê±°ì˜ ë©ˆì¶˜ ìƒíƒœ
         {
-            this.rotSpeed = 0; // È¸Àü ¼Óµµ¸¦ ¿ÏÀüÈ÷ 0À¸·Î ¼³Á¤
-            this.isStopping = true; // ¸ØÃß´Â ÁßÀ¸·Î ÇÃ·¡±× º¯°æ
-            ShowStopMessage(); // µð¹ö±× ¸Þ½ÃÁö Ãâ·Â
+            this.rotSpeed = 0; // íšŒì „ ì†ë„ë¥¼ ì™„ì „ížˆ 0ìœ¼ë¡œ ì„¤ì •
+            this.isStopping = true; // ë©ˆì¶”ëŠ” ì¤‘ìœ¼ë¡œ í”Œëž˜ê·¸ ë³€ê²½
+            ShowStopMessage(); // ë””ë²„ê·¸ ë©”ì‹œì§€ ì¶œë ¥
         }
 
-        // ESC Å°¸¦ ´­·¯ °ÔÀÓ Á¾·á
+        // ESC í‚¤ë¥¼ ëˆŒëŸ¬ ê²Œìž„ ì¢…ë£Œ
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
@@ -45,30 +45,31 @@ public class NeedleCode : MonoBehaviour
     {
         float angle = transform.eulerAngles.z;
 
-        // °¢µµ¿¡ µû¶ó ´Ù¸¥ ¸Þ½ÃÁö Ãâ·Â
+        // ê°ë„ì— ë”°ë¼ ë‹¤ë¥¸ ë©”ì‹œì§€ ì¶œë ¥
         if (angle >= 330 || angle < 30)
         {
-            Debug.Log("¿î¼ö º¸Åë");
+            Debug.Log("ìš´ìˆ˜ ë³´í†µ");
         }
         else if (angle >= 30 && angle < 90)
         {
-            Debug.Log("¿î¼ö ¸Å¿ì ³ª»Ý");
+            Debug.Log("ìš´ìˆ˜ ë§¤ìš° ë‚˜ì¨");
         }
         else if (angle >= 90 && angle < 150)
         {
-            Debug.Log("¿î¼ö ´ëÅë");
+            Debug.Log("ìš´ìˆ˜ ëŒ€í†µ");
         }
         else if (angle >= 150 && angle < 210)
         {
-            Debug.Log("¿î¼ö ³ª»Ý");
+            Debug.Log("ìš´ìˆ˜ ë‚˜ì¨");
         }
         else if (angle >= 210 && angle < 270)
         {
-            Debug.Log("¿î¼ö ÁÁÀ½");
+            Debug.Log("ìš´ìˆ˜ ì¢‹ìŒ");
         }
         else if (angle >= 270 && angle < 330)
         {
-            Debug.Log("¿î¼ö Á¶½É");
+            Debug.Log("ìš´ìˆ˜ ì¡°ì‹¬");
         }
     }
 }
+//needle ì´ë¯¸ì§€ë¥¼ ë£°ë › ê°€ìš´ë°ì— ë†“ì•„ì•¼ í•¨.
